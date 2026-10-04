@@ -31,10 +31,10 @@ jobs:
     - name: Build and Push Docker Image
       uses: mr-smithers-excellent/docker-build-push@v4
       with:
-        image: hb112829/my-app
-        registry: https://hub.docker.com/repository/docker/hb112829/hb112829
+        image: hb112829/hb112829
+        registry: docker.io
         dockerfile: ./Dockerfile
         directory: .
-        username: hb112829
-        password: "Ma!2Durga123"
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
          
